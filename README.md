@@ -11,10 +11,13 @@ The commits made after the defined time will not be evaluated by the instructors
 ### Challenge
 Develop two endpoints one GET and one POST according to the rules below.
 ●Use Java 11,Maven(to manage dependencies), and MySQL with Root user and Root password.
+
 ●The service should have an entity, dtos, a repository (for database connection), a controller , a service (which should house the logic when
 saving and fetching fromthe database)
+
 ●The connection to the database must be made using JPA and JDBC. Hint:use an application.properties or application.yaml to be able to do
 this.
+
 ●The payload sent to register a car in the database must have the following URLs:
 ```
 POST: /cars/post
