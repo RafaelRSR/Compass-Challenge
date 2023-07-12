@@ -37,10 +37,5 @@ public class CarController {
         }
     }
 
-    @ExceptionHandler(idChassiNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public void handleIdChassiNotFoundException() {
-    }
-
 }
 
