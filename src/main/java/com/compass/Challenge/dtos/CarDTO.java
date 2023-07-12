@@ -26,7 +26,7 @@ public class CarDTO {
         this.fabricationYear = fabricationYear;
     }
 
-    public CarDTO(Car entity) {
+    public CarDTO() {
     }
 
 
