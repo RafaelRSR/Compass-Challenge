@@ -2,9 +2,12 @@ package com.compass.Challenge.service;
 
 import com.compass.Challenge.dtos.CarDTO;
 import com.compass.Challenge.entity.Car;
+import com.compass.Challenge.exception.idChassiNotFoundException;
 import com.compass.Challenge.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -13,10 +16,10 @@ public class CarService {
     private CarRepository carRepository;
 
     public Car findById(Long idChassi) {
-        Car entity = carRepository.findById(idChassi).get();
-        CarDTO carDTO = new CarDTO(entity);
-        return entity;
+        return carRepository.findById(idChassi)
+                .orElseThrow(() -> new idChassiNotFoundException("idChassi not found!"));
     }
+
 
     public void saveCar(CarDTO carDTO) {
         try {
@@ -53,6 +56,5 @@ public class CarService {
         if (value == null) {
             throw new IllegalArgumentException("Field null not allowed");
         }
-
-        }
     }
+}
