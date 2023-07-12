@@ -16,14 +16,13 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @GetMapping("/{idChassi}")
+    @GetMapping("/get/{idChassi}")
     public ResponseEntity<Object> findById(@PathVariable Long idChassi) {
         try {
             Car car = carService.findById(idChassi);
             return ResponseEntity.ok(car);
         } catch (idChassiNotFoundException e) {
-            String errorMessage = "idChassi not found!";
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Car not found!");
         }
     }
 

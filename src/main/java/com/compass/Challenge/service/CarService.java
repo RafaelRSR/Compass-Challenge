@@ -17,7 +17,7 @@ public class CarService {
 
     public Car findById(Long idChassi) {
         return carRepository.findById(idChassi)
-                .orElseThrow(() -> new idChassiNotFoundException("idChassi not found!"));
+                .orElseThrow(() -> new idChassiNotFoundException("Car not found!"));
     }
 
 
