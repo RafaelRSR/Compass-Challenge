@@ -33,7 +33,6 @@ public class CarService {
         validateNotNull(carDTO.getBrand());
         validateNotNull(carDTO.getColor());
         validateNotNull(carDTO.getFabricationYear());
-        System.out.println("Field null not allowed");
 
         Car carEntity = new Car();
         carEntity.setIdChassi(carDTO.getIdChassi());
