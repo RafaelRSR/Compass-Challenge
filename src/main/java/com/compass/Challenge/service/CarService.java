@@ -7,6 +7,8 @@ import com.compass.Challenge.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 
 @Service
 public class CarService {
@@ -44,8 +46,8 @@ public class CarService {
     }
 
     public void validateCarBrand(String brand) {
-        if (!(brand.equalsIgnoreCase("Ford") || brand.equalsIgnoreCase("Chevrolet") || brand.equalsIgnoreCase("BMW")
-                || brand.equalsIgnoreCase("Volvo"))) {
+        final String[] allowedBrands = {"Ford", "Chevrolet", "BMW", "Volvo"};
+        if (!Arrays.asList(allowedBrands).contains(brand)) {
             throw new IllegalArgumentException("Brand not allowed.");
         }
     }
