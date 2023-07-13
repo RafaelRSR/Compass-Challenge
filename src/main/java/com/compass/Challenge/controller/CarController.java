@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class CarController {
 
     @Autowired
-    private CarService carService;
+    public CarService carService;
 
     @GetMapping("/get/{idChassi}")
     public ResponseEntity<Object> findById(@PathVariable Long idChassi) {

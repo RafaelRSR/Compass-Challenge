@@ -1,30 +1,29 @@
 package com.compass.Challenge.dtos;
 
-import com.compass.Challenge.entity.Car;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 
 public class CarDTO {
 
 
-    @JsonProperty("idChassi")
-    @NotBlank
     public long idChassi;
 
     @JsonProperty("name")
-    @NotBlank
+    @NotBlank(message = "Blank field not allowed!")
     public String name;
     @JsonProperty("brand")
-    @NotBlank
+    @NotBlank(message = "Blank field not allowed!")
     public String brand;
     @JsonProperty("color")
-    @NotBlank
+    @NotBlank(message = "Blank field not allowed!")
     public String color;
     @JsonProperty("fabricationYear")
-    @NotBlank
+    @NotBlank(message = "Blank field not allowed!")
     public String fabricationYear;
+
+    public CarDTO() {
+    }
 
     public CarDTO(long idChassi, String name, String brand, String color, String fabricationYear) {
         this.idChassi = idChassi;
@@ -32,9 +31,6 @@ public class CarDTO {
         this.brand = brand;
         this.color = color;
         this.fabricationYear = fabricationYear;
-    }
-
-    public CarDTO() {
     }
 
 
