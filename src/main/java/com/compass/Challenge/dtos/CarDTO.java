@@ -1,21 +1,29 @@
 package com.compass.Challenge.dtos;
 
 import com.compass.Challenge.entity.Car;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
 
 public class CarDTO {
 
 
-    @NotNull
+    @JsonProperty("idChassi")
+    @NotBlank
     public long idChassi;
 
-    @NotNull
+    @JsonProperty("name")
+    @NotBlank
     public String name;
-    @NotNull
+    @JsonProperty("brand")
+    @NotBlank
     public String brand;
-    @NotNull
+    @JsonProperty("color")
+    @NotBlank
     public String color;
-    @NotNull
+    @JsonProperty("fabricationYear")
+    @NotBlank
     public String fabricationYear;
 
     public CarDTO(long idChassi, String name, String brand, String color, String fabricationYear) {
